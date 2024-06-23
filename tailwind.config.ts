@@ -8,13 +8,24 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      screens: {
+        // defines all the min widths
+        'xs': '360px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+      },
+      colors: {
+        'blue': '#4462F4',
+        'off-black': '#2B2F32',
+        'complement': '#F4D644',
+        'off-white': '#F4F4F4'
       },
     },
   },
+  darkMode : 'class',
   plugins: [],
 };
 export default config;
