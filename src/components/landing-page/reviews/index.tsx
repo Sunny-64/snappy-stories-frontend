@@ -45,7 +45,8 @@ const Reviews = () => {
             </p>
             <Slider
                 componentToRender={ReviewCard}
-                slidesPerView={3}
+                slidePrevBtnId = '.slide-review-prev'
+                slideNextBtnId = '.slide-review-next'
                 data={dummy_data}
             />
         </section>

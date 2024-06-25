@@ -40,7 +40,8 @@ const TopAuthors = () => {
             </p>
             <Slider
                 componentToRender={AuthorCard}
-                slidesPerView={3}
+                slidePrevBtnId = '.slide-author-prev'
+                slideNextBtnId = '.slide-author-next'
                 data={dummy_data}
             />
         </section>

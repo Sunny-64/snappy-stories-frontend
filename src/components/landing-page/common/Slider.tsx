@@ -1,6 +1,6 @@
 'use client'
 import React, { useRef, useState } from "react";
-import { Swiper, SwiperRef, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperClass, SwiperRef, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
@@ -9,19 +9,21 @@ import "swiper/css";
 
 interface ISliderProps {
     componentToRender: React.FunctionComponent;
-    slidesPerView: number;
+    slidePrevBtnId : string
+    slideNextBtnId : string
     data: any[];
 }
 
-const Slider = ({ componentToRender: Component, slidesPerView, data }: ISliderProps) => {
-    const sliderRef = useRef<SwiperRef>(null);
+const Slider = ({ componentToRender: Component, slideNextBtnId, slidePrevBtnId, data }: ISliderProps) => {
+    const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(null)
+    const sliderRef = useRef<SwiperRef | null>(null);
 
     return (
         <div className="relative px-28">
             <Swiper
                 modules={[Navigation]}
                 spaceBetween={50}
-                slidesPerView={slidesPerView}
+                slidesPerView={3}
                 breakpoints={{
                     0: {
                         slidesPerView: 1,
@@ -34,15 +36,12 @@ const Slider = ({ componentToRender: Component, slidesPerView, data }: ISliderPr
                     },
                 }}
                 navigation={{
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
+                    nextEl: `${slideNextBtnId}`,
+                    prevEl: `${slidePrevBtnId}`,
                 }}
+                ref={sliderRef}
                 onSwiper={(swiper) => {
-                    if (sliderRef.current) {
-                        // Ensure sliderRef is not null before accessing its properties
-                        console.log(swiper); // Ensure swiper is properly passed
-                        // Do your logic here with the swiper instance
-                    }
+                    setSwiperInstance(swiper); 
                 }}
             >
                 {data.map((item: any, index: number) => (
@@ -51,10 +50,10 @@ const Slider = ({ componentToRender: Component, slidesPerView, data }: ISliderPr
                     </SwiperSlide>
                 ))}
             </Swiper>
-            <div className="swiper-button swiper-button-prev left-0" onClick={() => console.log('')}>
+            <div className="swiper-button swiper-button-prev left-0" onClick={() => swiperInstance?.slidePrev()}>
                 <FaAngleLeft className="text-8xl" />
             </div>
-            <div className="swiper-button swiper-button-next right-0" onClick={() => console.log('')}>
+            <div className="swiper-button swiper-button-next right-0" onClick={() => swiperInstance?.slideNext()}>
                 <FaAngleRight className="text-8xl" />
             </div>
         </div>
