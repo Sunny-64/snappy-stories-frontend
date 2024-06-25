@@ -17,10 +17,7 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    const pathname = usePathname();
-    const noHeaderFooter =
-        pathname.includes("(auth)") || pathname.includes("(onboarding)");
-    console.log(noHeaderFooter);
+
     return (
         <html lang="en" suppressHydrationWarning>
             <body className={inter.className}>

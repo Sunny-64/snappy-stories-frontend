@@ -21,7 +21,8 @@ const config: Config = {
         'blue': '#4462F4',
         'off-black': '#2B2F32',
         'complement': '#F4D644',
-        'off-white': '#F4F4F4'
+        'off-white': '#F4F4F4', 
+        'complement-light-70' : 'rgba(244, 214, 68, 0.7)'
       },
     },
   },

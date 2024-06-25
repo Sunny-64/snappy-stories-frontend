@@ -6,11 +6,11 @@ export {
     Footer
 }
 
-import Features from "./landing-page/Features";
-import Hero from "./landing-page/Hero";
-import Reviews from "./landing-page/Reviews";
+import Features from "./landing-page/features";
+import Hero from "./landing-page/hero";
+import Reviews from "./landing-page/reviews";
 import Sponsors from "./landing-page/Sponsors";
-import TopAuthors from "./landing-page/TopAuthors";
+import TopAuthors from "./landing-page/top-authors";
 import TopStories from "./landing-page/TopStories";
 
 export {
