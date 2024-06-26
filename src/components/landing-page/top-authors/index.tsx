@@ -46,6 +46,7 @@ const TopAuthors = () => {
                 navigation = {true}
                 slidesPerView={3}
                 swiperContainerStyles={'px-24'}
+                swiperSlideStyles = {'py-10 px-8'}
                 breakpoints={{
                     0: {
                         slidesPerView: 1,

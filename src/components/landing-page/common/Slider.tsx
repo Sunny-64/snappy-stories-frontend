@@ -20,16 +20,17 @@ type TBreakPoint = {
 
 interface ISliderProps {
     componentToRender: React.FunctionComponent;
-    slidePrevBtnId?: string;
-    slideNextBtnId?: string;
-    data: any[];
-    navigation?: boolean;
-    pagination?: boolean;
-    breakpoints?: TBreakPoint;
-    slidesPerView: number;
-    paginationId?: string;
-    swiperContainerStyles?: string;
-    paginationBulletStyles?: string;
+    slidePrevBtnId?: string
+    slideNextBtnId?: string
+    data: any[]
+    navigation?: boolean
+    pagination?: boolean
+    breakpoints?: TBreakPoint
+    slidesPerView: number
+    paginationId?: string
+    swiperContainerStyles?: string
+    paginationBulletStyles?: string
+    swiperSlideStyles ?: string
 }
 
 const Slider = ({
@@ -43,7 +44,7 @@ const Slider = ({
     slidesPerView,
     paginationId,
     swiperContainerStyles,
-    paginationBulletStyles,
+    swiperSlideStyles,
 }: ISliderProps) => {
     const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(
         null
@@ -89,7 +90,7 @@ const Slider = ({
                 }}
             >
                 {data.map((item: any, index: number) => (
-                    <SwiperSlide key={index} className="py-10 px-8">
+                    <SwiperSlide key={index} className={`${swiperSlideStyles}`}>
                         <Component {...item} />
                     </SwiperSlide>
                 ))}
@@ -106,9 +107,6 @@ const Slider = ({
             {pagination && (
                 <PaginationIndicator
                     paginationId={paginationId || "swiper-custom-pagination"}
-                    paginationBulletStyles={paginationBulletStyles}
-                    swiperInstance={swiperInstance}
-                    sliderInstance={sliderIntance}
                 />
             )}
         </div>

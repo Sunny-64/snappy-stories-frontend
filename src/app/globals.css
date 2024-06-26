@@ -53,6 +53,11 @@ body {
     justify-content: center;
 }
 
+.hero-pagination {
+    display: flex !important;
+    justify-content: center;
+}
+
 .story-pagination .swiper-pagination-bullet { 
     width: 14px !important;
     height: 14px !important;
