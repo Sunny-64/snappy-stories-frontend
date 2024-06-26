@@ -27,10 +27,10 @@ interface ISliderProps {
     pagination?: boolean;
     breakpoints?: TBreakPoint;
     slidesPerView: number;
-    paginationId ?: string
-    swiperContainerStyles ?: string
+    paginationId?: string;
+    swiperContainerStyles?: string;
+    paginationBulletStyles?: string;
 }
-
 
 const Slider = ({
     componentToRender: Component,
@@ -41,11 +41,16 @@ const Slider = ({
     pagination,
     breakpoints = {},
     slidesPerView,
-    paginationId, 
-    swiperContainerStyles
+    paginationId,
+    swiperContainerStyles,
+    paginationBulletStyles,
 }: ISliderProps) => {
-    const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(null);
-    const [sliderIntance, setSlideInstance] = useState<SwiperClass | null>(null); 
+    const [swiperInstance, setSwiperInstance] = useState<SwiperClass | null>(
+        null
+    );
+    const [sliderIntance, setSlideInstance] = useState<SwiperClass | null>(
+        null
+    );
 
     const sliderRef = useRef<SwiperRef | null>(null);
     return (
@@ -67,16 +72,15 @@ const Slider = ({
                               },
                           }
                 }
-                pagination = {{
-                    el : `.${paginationId}`, 
-                    clickable : true, 
+                pagination={{
+                    el: `.${paginationId}`,
+                    clickable: true,
                     // bulletClass : 'pagination-custom-bullet'
-                    
                 }}
                 navigation={{
                     nextEl: `.${slideNextBtnId}`,
                     prevEl: `.${slidePrevBtnId}`,
-                    disabledClass : 'swiper-button-disabled'
+                    disabledClass: "swiper-button-disabled",
                 }}
                 ref={sliderRef}
                 onSlideChange={(swiper) => setSlideInstance(swiper)}
@@ -93,11 +97,20 @@ const Slider = ({
             </Swiper>
 
             {navigation && (
-                <NavigationButtons swiperInstance={swiperInstance} sliderInstance={sliderIntance}/>
+                <NavigationButtons
+                    swiperInstance={swiperInstance}
+                    sliderInstance={sliderIntance}
+                />
             )}
 
-            {pagination && <PaginationIndicator paginationId={paginationId || "swiper-custom-pagination"} swiperInstance={swiperInstance} sliderInstance={sliderIntance} />}
-
+            {pagination && (
+                <PaginationIndicator
+                    paginationId={paginationId || "swiper-custom-pagination"}
+                    paginationBulletStyles={paginationBulletStyles}
+                    swiperInstance={swiperInstance}
+                    sliderInstance={sliderIntance}
+                />
+            )}
         </div>
     );
 };

@@ -45,6 +45,7 @@ const TopStories = () => {
             pagination={true}
             paginationId={'story-pagination'}
             swiperContainerStyles={'px-32'}
+            paginationBulletStyles={'stories-swiper-pagination-bullet'}
         />
     </section>
   )
