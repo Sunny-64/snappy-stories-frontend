@@ -38,7 +38,7 @@ const Reviews = () => {
     return (
         <section
             id="Top-Authors"
-            className="px-3 xs:px-4 lg:px-8 xl:px-10 mt-8 md:mt-16 pb-10 min-h-[400px]"
+            className="bg-white px-3 xs:px-4 lg:px-8 xl:px-10 mt-8 md:mt-16 py-10 min-h-[400px]"
         >
             <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-6">
                 User<span className="text-complement"> Reviews </span>

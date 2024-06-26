@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 const StoryCard = (props: any) => {
     return (
-        <div className="md:grid md:grid-cols-2 bg-complement-light-50 p-8 rounded-md">
+        <div className="md:grid md:grid-cols-2 bg-yellow-100 p-8 rounded-md shadow-md">
             <div className="flex justify-center ">
                 <div className="w-[250px] min-h-[370px] relative ">
                     <Image
