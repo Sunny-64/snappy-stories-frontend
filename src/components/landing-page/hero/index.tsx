@@ -21,9 +21,6 @@ const Hero = () => {
                 pagination={{ 
                   clickable: true 
                 }}
-                // onSlideChange={() => console.log("slide change")}
-                // onSwiper={(swiper) => console.log(swiper)}
-                // autoplay={true}
             >
              
                {CAROUSAL_DATA.map((item, index) => (

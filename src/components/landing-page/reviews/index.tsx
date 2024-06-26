@@ -41,13 +41,27 @@ const Reviews = () => {
             className="px-3 xs:px-4 lg:px-8 xl:px-10 mt-8 md:mt-16 pb-10 min-h-[400px]"
         >
             <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-6">
-                Top<span className="text-complement"> Authors </span>
+                User<span className="text-complement"> Reviews </span>
             </p>
             <Slider
                 componentToRender={ReviewCard}
-                slidePrevBtnId = '.slide-review-prev'
-                slideNextBtnId = '.slide-review-next'
+                slidePrevBtnId = 'slide-review-prev'
+                slideNextBtnId = 'slide-review-next'
                 data={dummy_data}
+                navigation = {true}
+                slidesPerView={3}
+                swiperContainerStyles={'px-24'}
+                breakpoints={{
+                    0: {
+                        slidesPerView: 1,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                }}
             />
         </section>
     );

@@ -40,9 +40,23 @@ const TopAuthors = () => {
             </p>
             <Slider
                 componentToRender={AuthorCard}
-                slidePrevBtnId = '.slide-author-prev'
-                slideNextBtnId = '.slide-author-next'
+                slidePrevBtnId = 'slide-author-prev'
+                slideNextBtnId = 'slide-author-next'
                 data={dummy_data}
+                navigation = {true}
+                slidesPerView={3}
+                swiperContainerStyles={'px-24'}
+                breakpoints={{
+                    0: {
+                        slidesPerView: 1,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                }}
             />
         </section>
     );

@@ -11,7 +11,7 @@ import Hero from "./landing-page/hero";
 import Reviews from "./landing-page/reviews";
 import Sponsors from "./landing-page/Sponsors";
 import TopAuthors from "./landing-page/top-authors";
-import TopStories from "./landing-page/TopStories";
+import TopStories from "./landing-page/top-stories";
 
 export {
     Features, 

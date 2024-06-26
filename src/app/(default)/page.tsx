@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className="min-h-[100vh]">
         <Hero />
-        {/* <Features /> */}
+        <Features />
         <TopAuthors />
         <TopStories />
         <Sponsors />
