@@ -50,7 +50,7 @@ const Reviews = () => {
                 data={dummy_data}
                 navigation = {true}
                 slidesPerView={3}
-                swiperContainerStyles={'px-24'}
+                swiperContainerStyles={'md:px-12 xl:px-24'}
                 swiperSlideStyles = {'py-10 px-8'}
                 breakpoints={{
                     0: {
@@ -59,7 +59,7 @@ const Reviews = () => {
                     768: {
                         slidesPerView: 2,
                     },
-                    1024: {
+                    1100: {
                         slidesPerView: 3,
                     },
                 }}

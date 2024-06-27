@@ -44,7 +44,7 @@ const TopStories = () => {
             slidesPerView={1}        
             pagination={true}
             paginationId={'story-pagination'}
-            swiperContainerStyles={'px-32'}
+            swiperContainerStyles={'md:px-4 lg:px-32'}
             swiperSlideStyles = {'py-10 px-8'}
         />
     </section>

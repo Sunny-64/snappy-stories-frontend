@@ -22,16 +22,16 @@ const NavigationButtons = ({swiperInstance, sliderInstance} : INavigationProps) 
     return (
         <>
             <div
-                className={`swiper-button left-0 ${isStart && 'opacity-50'}`}
+                className={`swiper-button flex md:-left-5 -left-3 ${isStart && 'opacity-50'}`}
                 onClick={() => swiperInstance?.slidePrev()}
             >
-                <FaAngleLeft className="text-8xl" />
+                <FaAngleLeft className="text-5xl md:text-8xl" />
             </div>
             <div
-                className={`swiper-button right-0 ${isEnd && 'opacity-50'}`}
+                className={`swiper-button md:-right-5 -right-3 ${isEnd && 'opacity-50'}`}
                 onClick={() => swiperInstance?.slideNext()}
             >
-                <FaAngleRight className="text-8xl" />
+                <FaAngleRight className="text-5xl md:text-8xl" />
             </div>
         </>
     );
