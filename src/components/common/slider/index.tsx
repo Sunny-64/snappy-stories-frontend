@@ -10,28 +10,10 @@ import "swiper/css";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import { SwiperOptions } from "swiper/types";
 import NavigationButtons from "./NavigationButtons";
 import PaginationIndicator from "./PaginationIndicator";
+import { ISliderProps } from "@/types";
 
-type TBreakPoint = {
-    [key: number]: SwiperOptions;
-};
-
-interface ISliderProps {
-    componentToRender: React.FunctionComponent;
-    slidePrevBtnId?: string
-    slideNextBtnId?: string
-    data: any[]
-    navigation?: boolean
-    pagination?: boolean
-    breakpoints?: TBreakPoint
-    slidesPerView: number
-    paginationId?: string
-    swiperContainerStyles?: string
-    paginationBulletStyles?: string
-    swiperSlideStyles ?: string
-}
 
 const Slider = ({
     componentToRender: Component,
@@ -76,7 +58,6 @@ const Slider = ({
                 pagination={{
                     el: `.${paginationId}`,
                     clickable: true,
-                    // bulletClass : 'pagination-custom-bullet'
                 }}
                 navigation={{
                     nextEl: `.${slideNextBtnId}`,

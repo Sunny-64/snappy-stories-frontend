@@ -1,5 +1,5 @@
 import React from 'react'
-import Slider from '../common/Slider'
+import Slider from '../../common/slider'
 import StoryCard from './StoryCard'
 
 const BASE_URL = '/assets/landing-page'

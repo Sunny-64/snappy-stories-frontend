@@ -1,5 +1,5 @@
 import React from "react";
-import Slider from "../common/Slider";
+import Slider from "../../common/slider";
 import ReviewCard from "./ReviewCard";
 
 const dummy_data = [

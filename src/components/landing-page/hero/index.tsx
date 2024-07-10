@@ -1,15 +1,7 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination } from "swiper/modules";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-
 import {CAROUSAL_DATA} from './hero-data'; 
-import Slider from "../common/Slider";
+import Slider from "../../common/slider";
 import Ui from "./Ui";
 
 const Hero = () => {
