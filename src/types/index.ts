@@ -18,3 +18,10 @@ export interface ISliderProps {
     paginationBulletStyles?: string
     swiperSlideStyles ?: string
 }
+
+export interface ISignupInputs {
+    name : string
+    username : string
+    email : string 
+    password : string
+}
