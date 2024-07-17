@@ -33,7 +33,7 @@ const STORIES = [
 
 const TopStories = () => {
   return (
-    <section id='Top-stories' className='bg-white px-3 xs:px-4 lg:px-8 xl:px-10  py-10'>
+    <section id='Top-stories' className='bg-white px-1 xs:px-4 lg:px-8 xl:px-10  py-10'>
 
         <p className='text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-6'>
           Top <span className='text-blue'>Stories</span>
@@ -45,7 +45,7 @@ const TopStories = () => {
             pagination={true}
             paginationId={'story-pagination'}
             swiperContainerStyles={'md:px-4 lg:px-32'}
-            swiperSlideStyles = {'py-10 px-8'}
+            swiperSlideStyles = {'py-10 sm:px-8'}
         />
     </section>
   )

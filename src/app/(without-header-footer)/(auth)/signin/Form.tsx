@@ -2,7 +2,7 @@
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { registerSchema } from "@/validations/schema";
+import { loginSchema } from "@/validations/schema";
 
 const Form = () => {
     const {
@@ -11,10 +11,8 @@ const Form = () => {
         setError,
         formState: { isValid, errors },
     } = useForm({
-        resolver: yupResolver(registerSchema),
+        resolver: yupResolver(loginSchema),
         defaultValues: {
-            name: "",
-            username: "",
             email: "",
             password: "",
         },
@@ -28,67 +26,14 @@ const Form = () => {
             className=""
             onSubmit={handleSubmit(onSubmit)}
         >
-            <p className="text-3xl font-bold mb-8 text-center">Signup</p>
+            <p className="text-3xl font-bold mb-8 text-center">Sign In</p>
 
             <ul className="text-red-600 list-disc px-4 mb-3">
-                {errors?.name?.message && <li>{errors?.name?.message}</li>}
-                {errors?.username?.message && (
-                    <li>{errors?.username?.message}</li>
-                )}
                 {errors?.email?.message && <li>{errors?.email?.message}</li>}
                 {errors?.password?.message && (
                     <li>{errors?.password?.message}</li>
                 )}
             </ul>
-
-            <div className="flex flex-col sm:flex-row mb-8 gap-4">
-                <Controller
-                    control={control}
-                    name="name"
-                    render={({ field: { onChange, onBlur, value } }) => (
-                        <div className="flex flex-col sm:w-[48%]">
-                            <label htmlFor="" className="font-bold mb-1">
-                                Name
-                            </label>
-                            <input
-                                type="text"
-                                placeholder="john"
-                                className={`bg-gray-200 border-[2px] border-gray-500 py-2 px-3 rounded-md ${
-                                    errors?.name &&
-                                    "border-[1px] border-red-600"
-                                }`}
-                                onChange={onChange}
-                                onBlur={onBlur}
-                                value={value}
-                            />
-                        </div>
-                    )}
-                />
-
-                <Controller
-                    control={control}
-                    name="username"
-                    render={({ field: { onChange, onBlur, value } }) => (
-                        <div className="flex flex-col sm:w-[48%]">
-                            <label htmlFor="" className="font-bold mb-1">
-                                Username
-                            </label>
-                            <input
-                                type="text"
-                                placeholder="john"
-                                className={`bg-gray-200 border-[2px] border-gray-500 py-2 px-3 rounded-md ${
-                                    errors?.username &&
-                                    "border-[1px] border-red-600"
-                                }`}
-                                onChange={onChange}
-                                onBlur={onBlur}
-                                value={value}
-                            />
-                        </div>
-                    )}
-                />
-            </div>
-
             <Controller
                 control={control}
                 name="email"
@@ -137,10 +82,10 @@ const Form = () => {
             />
            <div className="flex justify-center">
            <button
-                className="mb-6 inline-block px-4 py-2 h-10 bg-blue text-white rounded-md"
+                className="mb-6 inline-block w-2/5 h-10 bg-blue text-white rounded-md"
                 type="submit"
             >
-                Create Account
+                Login
             </button>
            </div>
         </form>

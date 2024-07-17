@@ -2,7 +2,7 @@ import { Features, Hero, Reviews, Sponsors, TopAuthors, TopStories } from "@/com
 
 export default function Home() {
   return (
-    <main className="min-h-[100vh]">
+    <main className="min-h-screen">
         <Hero />
         <Features />
         <TopAuthors />
