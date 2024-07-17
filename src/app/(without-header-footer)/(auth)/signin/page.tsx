@@ -7,7 +7,7 @@ const Page = () => {
     <section id="Signin" className="px-4 h-full">
     <div className="p-6">
     <p className="text-right">
-          Don't have an account ?{" "}
+          Don&apos;t have an account ?{" "}
           <span className="text-blue">Signup</span>
       </p>
     </div> 
